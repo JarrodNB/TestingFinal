@@ -9,17 +9,17 @@ public class Card {
 		setNum(num);
 	}
 
-	String getType() 
+	public String getType() 
 	{
 		return type;
 	}
 
-	int getNum() 
+	public int getNum() 
 	{
 		return num;
 	}
 
-	void setType(String type) 
+	private void setType(String type) 
 	{
 		switch(type)
 		{
@@ -31,7 +31,7 @@ public class Card {
 		}
 	}
 
-	void setNum(int num) 
+	private void setNum(int num) 
 	{
 		if (num < 0 || num > 13)
 		{
