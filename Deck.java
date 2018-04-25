@@ -13,7 +13,10 @@ public class Deck
 	
 	private void shuffle() 
 	{
-		Collections.shuffle(deck);
+		for (int index = 0; index < 5; index++)
+		{
+			Collections.shuffle(deck);
+		}
 	}
 
 	private void createDeck()

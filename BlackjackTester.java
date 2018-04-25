@@ -9,12 +9,13 @@ public class BlackjackTester
 	@Before
 	public void setUp() throws Exception 
 	{
+		
 	}
 
 	@Test
 	public void test() 
 	{
-		fail("Not yet implemented");
+		
 	}
 
 }
