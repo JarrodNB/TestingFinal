@@ -1,12 +1,14 @@
-public class Card {
-	
+public class Card 
+{
 	private String type;
-	private int num;
+	private int value;
+	private int points;
 	
-	public Card(String type, int num) 
+	public Card(String type, int value, int points) 
 	{
 		setType(type);
-		setNum(num);
+		setValue(value);
+		setPoints(points);
 	}
 
 	public String getType() 
@@ -14,9 +16,9 @@ public class Card {
 		return type;
 	}
 
-	public int getNum() 
+	public int getValue() 
 	{
-		return num;
+		return value;
 	}
 
 	private void setType(String type) 
@@ -31,13 +33,39 @@ public class Card {
 		}
 	}
 
-	private void setNum(int num) 
+	public void setValue(int value) 
 	{
-		if (num < 0 || num > 13)
+		if (value < 0 || value > 13)
 		{
 			throw new RuntimeException("Invalid Card Value");
 		}
-		this.num = num;
+		this.value = value;
 	}
 	
+	
+	
+	public int getPoints() {
+		return points;
+	}
+
+	public void setPoints(int points) {
+		if (points < 0 || points > 11)
+		{
+			throw new RuntimeException("Invalid Card Points");
+		}
+		this.points = points;
+	}
+
+	@Override
+	public String toString()
+	{
+		switch (value)
+		{
+			case 1: return "Ace of " + type;
+			case 11: return "Jack of " + type;
+			case 12: return "Queen of " + type;
+			case 13: return "King of " + type;
+			default: return value + " of " + type;
+		}
+	}
 }

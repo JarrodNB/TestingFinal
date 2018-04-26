@@ -1,35 +1,40 @@
 import java.util.ArrayList;
 
-public class Player 
+public abstract class Player 
 {
-	private int playerScore;
-	private int playerMoney;
-	private Hand playerHand;
+	protected ArrayList<Card> hand;
+	private int money;
 	
-	public int getPlayerScore()
+	public abstract int getScore();
+	
+	public void newHand(ArrayList<Card> hand)
 	{
-	    int score = 0;
-	    if (playerHand == null)
-	    {
-	    	return score;
-	    }
-	    return 0;
-	}
-	public int getPlayerMoney()
-	{
-	    return playerMoney;
-	}
-	public void setPlayerMoney(int playerMoney)
-	{
-	    this.playerMoney = playerMoney;
-	}
-	public Hand getPlayerHand() {
-		return playerHand;
-	}
-	public void setPlayerHand(Hand playerHand) {
-		this.playerHand = playerHand;
+		this.hand = hand;
 	}
 	
+	public void cardDrawn(Card card)
+	{
+		hand.add(card);
+	}
 	
+	public ArrayList<Card> getHand()
+	{
+		return hand;
+	}
+	
+	public void winMoney(int amount)
+	{
+		money += amount;
+	}
+	
+	public void loseMoney(int amount)
+	{
+		money -= amount;
+	}
+	
+	public int getMoney()
+	{
+		return money;
+	}
 	
 }

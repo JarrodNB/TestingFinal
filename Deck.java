@@ -4,12 +4,7 @@ import java.util.Stack;
 
 public class Deck 
 {
-	private Stack<Card> deck = new Stack<>();
-	
-	public Deck()
-	{
-		newGame();
-	}
+	private Stack<Card> deck; 
 	
 	private void shuffle() 
 	{
@@ -22,24 +17,29 @@ public class Deck
 	private void createDeck()
 	{
 		Card card;
+		int points;
 		for (int index = 1; index <= 13; index++)
 		{
-			card = new Card(CardType.CLUBS, index);
+			points = (index < 11) ? index : 10;
+			card = new Card(CardType.CLUBS, index, points);
 			deck.add(card);
 		}
 		for (int index = 1; index <= 13; index++)
 		{
-			card = new Card(CardType.SPADES, index);
+			points = (index < 11) ? index : 10;
+			card = new Card(CardType.SPADES, index, points);
 			deck.add(card);
 		}
 		for (int index = 1; index <= 13; index++)
 		{
-			card = new Card(CardType.HEARTS, index);
+			points = (index < 11) ? index : 10;
+			card = new Card(CardType.HEARTS, index, points);
 			deck.add(card);
 		}
 		for (int index = 1; index <= 13; index++)
 		{
-			card = new Card(CardType.DIAMONDS, index);
+			points = (index < 11) ? index : 10;
+			card = new Card(CardType.DIAMONDS, index, points);
 			deck.add(card);
 		}
 	}
@@ -59,6 +59,7 @@ public class Deck
 	
 	public void newGame()
 	{
+		deck = new Stack<>();
 		createDeck();
 		shuffle();
 	}
