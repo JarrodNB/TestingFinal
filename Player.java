@@ -4,16 +4,16 @@ public class Player
 {
 	private int playerScore;
 	private int playerMoney;
-	private int playerBet;
 	private Hand playerHand;
 	
 	public int getPlayerScore()
 	{
-	    return playerScore;
-	}
-	public void setPlayerScore(int playerScore)
-	{
-	    this.playerScore = playerScore;
+	    int score = 0;
+	    if (playerHand == null)
+	    {
+	    	return score;
+	    }
+	    return 0;
 	}
 	public int getPlayerMoney()
 	{
@@ -23,13 +23,11 @@ public class Player
 	{
 	    this.playerMoney = playerMoney;
 	}
-	public int getPlayerBet()
-	{
-	    return playerBet;
+	public Hand getPlayerHand() {
+		return playerHand;
 	}
-	public void setPlayerBet(int playerBet)
-	{
-	    this.playerBet = playerBet;
+	public void setPlayerHand(Hand playerHand) {
+		this.playerHand = playerHand;
 	}
 	
 	

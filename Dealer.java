@@ -3,6 +3,8 @@ public class Dealer
 {
     private int dealerScore;
     private int dealerMoney;
+    private Hand dealerHand;
+    
     public int getDealerScore()
     {
         return dealerScore;
@@ -19,6 +21,12 @@ public class Dealer
     {
         this.dealerMoney = dealerMoney;
     }
+	public Hand getDealerHand() {
+		return dealerHand;
+	}
+	public void setDealerHand(Hand dealerHand) {
+		this.dealerHand = dealerHand;
+	}
     
     
 }
