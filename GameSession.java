@@ -9,7 +9,6 @@ public class GameSession {
 	private Deck deck;
 	private int currentBet;
 	
-	
 	public void play()
 	{
 		println("Welcome to a game of black jack!\n");
@@ -53,12 +52,8 @@ public class GameSession {
 			{
 				println("I don't understand.\n");
 			}
-		}
-		
-		
-		
+		}	
 	}
-
 
 	private void result() 
 	{
@@ -103,7 +98,7 @@ public class GameSession {
 
 	private void newRound() {
 		deck.newGame();
-		println("Your current money is $$$" + player.getMoney() + "\n");
+		println("Your current money is $" + player.getMoney() + "\n");
 		currentBet = getBet(player.getMoney());
 		PlayerTurn playerTurn = new PlayerTurn(dealer, player, deck);
 		try 
@@ -117,6 +112,7 @@ public class GameSession {
 		catch (Bust e) 
 		{
 			println("Looks like you busted!" + "\n");
+			return;
 		}
 		DealerTurn dealerTurn = new DealerTurn();
 		try 

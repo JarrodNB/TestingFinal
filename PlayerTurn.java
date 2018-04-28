@@ -45,6 +45,7 @@ public class PlayerTurn
 			{
 				if (player.getScore() + 10 == 21)
 				{
+					card.setPoints(11);
 					throw new TwentyOne();
 				}
 				ace(card);
@@ -90,6 +91,7 @@ public class PlayerTurn
 			{
 				if (player.getScore() + 10 == 21)
 				{
+					card.setPoints(11);
 					throw new TwentyOne();
 				}
 				ace(card);
