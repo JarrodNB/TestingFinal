@@ -162,10 +162,12 @@ public class GameSession {
 	public static void println(String string)
 	{
 		System.out.println(string);
-		try {
+		try 
+		{
 			TimeUnit.MILLISECONDS.sleep(800);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
+		} 
+		catch (InterruptedException e) 
+		{
 			e.printStackTrace();
 		}
 	}
