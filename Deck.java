@@ -63,4 +63,9 @@ public class Deck
 		createDeck();
 		shuffle();
 	}
+	
+	public int getSizeOfDeck()
+	{
+		return deck.size();
+	}
 }

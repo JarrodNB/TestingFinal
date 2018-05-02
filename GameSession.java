@@ -96,7 +96,8 @@ public class GameSession {
 	}
 
 
-	private void newRound() {
+	private void newRound() 
+	{
 		deck.newGame();
 		println("Your current money is $" + player.getMoney() + "\n");
 		currentBet = getBet(player.getMoney());
